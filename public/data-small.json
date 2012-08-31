@@ -1,0 +1,38 @@
+[
+    {
+        "_id": 0,
+        "url": "IMG_1802.jpg",
+        "caption": "Bathroom scale",
+        "description": "A lovely artifact purchased from Carrefour.",
+        "currentPrice": 20,
+        "minBid": 10,
+        "currency": "CNY"
+    },
+    {
+        "_id": 1,
+        "url": "IMG_1803.jpg",
+        "caption": "Drying rack",
+        "description": "Another gem from Carrefour. Yours for less then cheap!",
+        "currentPrice": 10,
+        "minBid": 10,
+        "currency": "CNY"
+    },
+    {   
+        "_id": 2,
+        "url": "IMG_1804.jpg",
+        "caption": "IKEA NYFORS Table lamp",
+        "description": "Can be found for ¥399 at IKEA.",
+        "currentPrice": 100,
+        "minBid": 10,
+        "currency": "CNY"
+    },
+    {   
+        "_id": 3,
+        "url": "IMG_1805.jpg",
+        "caption": "IKEA NYFORS Table lamp",
+        "description": "Can be found for ¥399 at IKEA.",
+        "currentPrice": 100,
+        "minBid": 10,
+        "currency": "CNY"
+    }
+]

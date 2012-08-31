@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'v0.6.14' ]
+2 info using npm@1.1.32
+3 info using node@v0.8.0
+4 verbose config file /Users/stephanwallentin/.npmrc
+5 verbose config file /usr/local/etc/npmrc
+6 verbose config file /usr/local/lib/node_modules/npm/npmrc
+7 verbose read json /Users/stephanwallentin/Desktop/Bazaar/package.json
+8 verbose read json /Users/stephanwallentin/Desktop/Bazaar/node_modules/connect-redis/package.json
+9 verbose read json /Users/stephanwallentin/Desktop/Bazaar/node_modules/everyauth/package.json
+10 verbose read json /Users/stephanwallentin/Desktop/Bazaar/node_modules/jade/package.json
+11 verbose read json /Users/stephanwallentin/Desktop/Bazaar/node_modules/mongoose/package.json
+12 verbose read json /Users/stephanwallentin/Desktop/Bazaar/node_modules/mongoose-auth/package.json
+13 verbose read json /Users/stephanwallentin/Desktop/Bazaar/node_modules/vows/package.json
+14 verbose from cache /Users/stephanwallentin/Desktop/Bazaar/package.json
+15 verbose readDependencies using package.json deps
+16 verbose cache add [ 'v0.6.14', null ]
+17 silly cache add name=undefined spec="v0.6.14" args=["v0.6.14",null]
+18 verbose parsed url { pathname: 'v0.6.14', path: 'v0.6.14', href: 'v0.6.14' }
+19 verbose addNamed [ 'v0.6.14', '' ]
+20 verbose addNamed [ null, '' ]
+21 silly addNameRange { name: 'v0.6.14', range: '', hasData: false }
+22 verbose url raw v0.6.14
+23 verbose url resolving [ 'https://registry.npmjs.org/', './v0.6.14' ]
+24 verbose url resolved https://registry.npmjs.org/v0.6.14
+25 http GET https://registry.npmjs.org/v0.6.14
+26 http 404 https://registry.npmjs.org/v0.6.14
+27 silly registry.get cb [ 404,
+27 silly registry.get   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+27 silly registry.get     date: 'Thu, 30 Aug 2012 08:34:00 GMT',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'content-length': '52',
+27 silly registry.get     'cache-control': 'must-revalidate' } ]
+28 error 404 'v0.6.14' is not in the npm registry.
+28 error 404 You should bug the author to publish it
+28 error 404
+28 error 404 Note that you can also install from a
+28 error 404 tarball, folder, or http url, or git url.
+29 error System Darwin 12.1.0
+30 error command "node" "/usr/local/bin/npm" "install" "v0.6.14"
+31 error cwd /Users/stephanwallentin/Desktop/Bazaar
+32 error node -v v0.8.0
+33 error npm -v 1.1.32
+34 error code E404
+35 error message 404 Not Found: v0.6.14
+36 verbose exit [ 1, true ]

@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  #gallery.gallery
+    .viewer
+    .control
+      a.btn-previous.btn-navigate.navigate(data-element='#gallery', data-action='previous')
+      a.btn-next.btn-navigate.navigate(data-element='#gallery', data-action='next')
+    .thumbnails

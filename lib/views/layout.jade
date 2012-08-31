@@ -1,0 +1,68 @@
+include mixins/common
+!!!
+html
+  head
+    meta(charset='utf-8')
+    title= title
+    meta(name='viewport')
+    meta(name='viewport", content="width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    link(href='/css/bootstrap-responsive.css', rel='stylesheet')
+    link(href='/css/styles.css', rel='stylesheet')
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#') Project name
+          div.nav-collapse.collapse
+            ul.nav
+              li.active
+                a(href='/') Home
+              li
+                a(href='/admin') Admin
+              li
+                mixin authentication()
+    .container
+      .row
+        .span12.content
+          block content
+
+    script(src='/js/libs/jquery.js')
+    script(src='/js/libs/bootstrap.js')
+    script(src='/js/libs/handlebars.js')
+    script(src='/js/libs/jquery.imagesloaded.js')
+    script(src='/js/libs/gallery.js')
+    script(src='/js/scripts.js')
+
+    //- templates
+    script#viewer-template(type='text/x-handlebars-template')
+      |  <div class="item">
+      |    <img src="/img/bazaar/{{url}}" class="img">
+      |    <div class='info'>
+      |      <h4>{{caption}}</h4>
+      |      <p>{{description}}</p>
+      |      {{#if isSold}}
+      |       <h1>This product has been sold!</h1>
+      |       {{else}}
+      |      <span class="input-prepend input-append">
+      |        <span class="add-on">Current bid: ¥</span><input disabled class="span1" id="appendedPrependedInput" size="16" type="text" value="{{currentPrice}}">
+      |      </span>
+      |      <button class="btn btn-normal btn-primary btn-bid" data-id="{{_id}}" data-action="bid" type="button">Bid ¥{{minBid}}</button>
+      |      <button class="btn btn-normal btn-danger btn-bid" data-id="{{_id}}" data-action="maxBid" type="button">Maxbid ¥{{maxPrice}}</button>
+      |       {{/if}}
+      |    </div>
+      |  </div>    
+
+    script#thumbnail-template(type='text/x-handlebars-template')
+      | <div class="thumbnail navigate" data-action='to' data-element='#gallery'>
+      |  <img src="/img/bazaar/{{url}}" class='img'>
+      | </div>
+
+    //- livereload
+    | <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>

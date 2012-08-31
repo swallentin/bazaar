@@ -1,0 +1,10 @@
+mixin authentication()
+  div(class='btn-group')
+    -if(everyauth.loggedIn) 
+      a(class='btn btn-danger btn-auth flexwidth btn-login', autocomplete='off', href='/logout', data-loading-text='Logging out...')
+        i.icon-user.icon-white
+        | Logout
+    -else
+      a(class='btn btn-primary btn-auth flexwidth btn-login', autocomplete='off', href='/auth/facebook?redirectPath=/', data-loading-text='Logging in...')
+        i.icon-user.icon-white
+        | Login

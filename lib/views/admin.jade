@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  table.table.table-striped.table-bordered.table-hover.grid-products
+    thead
+      tr
+        th img
+        th caption
+        th description
+        th currentPrice
+        th mindBid
+        th maxPrice
+        th isSold
+        th action
+    tbody
+    - each product in products
+      tr(data-id='#{product.id}')
+        td 
+          img(src='/img/bazaar/#{product.url}')
+        td #{product.caption}
+        td #{product.description}
+        td #{product.currentPrice}
+        td #{product.minBid}
+        td #{product.maxPrice}
+        td #{product.isSold}
+        td 
+          button.btn.btn-mini.btn-info(type="button") Change
+
