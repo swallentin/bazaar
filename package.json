@@ -10,6 +10,7 @@
     , "mongoose-auth": ""
     , "everyauth": ""  
     , "connect-redis": ""
+    , "bcrypt": ""
   }
   , "devDependencies": {
       "vows": ""
