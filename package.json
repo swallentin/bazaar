@@ -1,6 +1,6 @@
 {
     "name": "bazaar"
-  , "version": "0.0.1"
+  , "version": "0.1.0"
   , "private": true
   , "engines": {
       "node": "0.6.x"
@@ -11,8 +11,8 @@
     , "less": ""
     , "jade": ">= 0.0.1"
     , "mongoose": ""
-    , "everyauth": ""
-    , "mongoose-auth": ""
+    , "everyauth": "https://github.com/bnoguchi/everyauth/zipball/master"
+    , "mongoose-auth": "https://github.com/bnoguchi/mongoose-auth/zipball/master"
     , "connect-redis": ""
   }
   , "devDependencies": {
