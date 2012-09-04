@@ -70,9 +70,6 @@ app.configure('production', function(){
 //   }
 // });
 
-authentication.helpExpress(app);
-
-
 // Routes
 
 app.get('/', routes.index);
