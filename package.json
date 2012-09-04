@@ -2,17 +2,13 @@
     "name": "bazaar"
   , "version": "0.1.0"
   , "private": true
-  , "engines": {
-      "node": ""
-    , "npm": ""
-  }
   , "dependencies": {
-      "express": "2.5.8"
+      "express": "2.x"
     , "less": ""
-    , "jade": ">= 0.0.1"
+    , "jade": ""
     , "mongoose": ""
-    , "everyauth": ""
     , "mongoose-auth": ""
+    , "everyauth": ""  
     , "connect-redis": ""
   }
   , "devDependencies": {
