@@ -11,8 +11,8 @@
     , "less": ""
     , "jade": ">= 0.0.1"
     , "mongoose": ""
-    , "everyauth": "https://github.com/bnoguchi/everyauth/zipball/master"
-    , "mongoose-auth": "https://github.com/bnoguchi/mongoose-auth/zipball/master"
+    , "everyauth": ""
+    , "mongoose-auth": ""
     , "connect-redis": ""
   }
   , "devDependencies": {
