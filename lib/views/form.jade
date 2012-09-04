@@ -1,0 +1,51 @@
+mixin update(product)
+  form.form(method='post', action='/product/save/#{product._id}')
+    legend=product._id
+
+    label Image name
+    input(type='text', name="url", value=product.url)
+    span(class='help-block') Input image name
+
+    label Caption
+    input(type='text', name="caption",value=product.caption)
+    span(class='help-block') Input a caption
+
+    label Description
+    textarea(type='text', name="description")=product.description
+    span(class='help-block') Input a description
+
+    label Current Price
+    .input-prepend
+      span.add-on ¥
+      input(type='text', name="currentPrice", value=product.currentPrice)
+    span(class='help-block') Input current price
+
+    label Minimium Price
+    .input-prepend
+      span.add-on ¥
+      input(type='text', name="minPrice", value=product.minPrice)
+    span(class='help-block') Input minimium price
+
+    label Maximum Price
+    .input-prepend
+      span.add-on ¥
+      input(type='text', name="maxPrice", value=product.maxPrice)
+    span(class='help-block') Input maximum price
+
+    label Minimium Bid
+    .input-prepend
+      span.add-on ¥
+      input(type='text', name="minBid", value=product.minBid)
+    span(class='help-block') Input minimium bid
+
+    label Is product sold
+    input(type='checkbox', name="isSold", checked=product.isSold)
+    span(class='help-block') Check if product is sold
+
+    label Last bidder
+    input(type='text', name="lastBidder", value=product.lastBidder)
+    span(class='help-block') Input the last bidder's username
+
+    .form-actions
+      button.btn(data-dismiss="modal", aria-hidden="true") Close
+      button.btn.btn-primary(type='submit') Save

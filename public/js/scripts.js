@@ -1,6 +1,10 @@
 
 $(function() {
 
+  $('#myModal').on('show', function(e) {
+    console.log(e);
+  });
+
   // $('.grid-products .btn').click(function () {
   //   $this = $(this);
   //   $parent = $($this.parent().parent());
@@ -43,18 +47,26 @@ $(function() {
         $.post("/bid/" + id, { 
           action: action
         }, function(data) {
-          
+
           var $parent = $($this[0]).parent();
 
-          if( data.currentPrice >= data.maxPrice ) {
-            $parent.fadeTo(500, 0, function() {
-              $parent.html("<h1>You won the auction congrats!</h1>").fadeTo(500, 1);
-            });
+          console.log(data);
+          if( data.message == undefined ) {
+
+            if( data.currentPrice >= data.maxPrice ) {
+              $parent.fadeTo(500, 0, function() {
+                $parent.html("<h1>You won the auction congrats!</h1>").fadeTo(500, 1);
+              });
+            }
+            else {
+              $parent.find("#appendedPrependedInput")
+                .attr("value", data.currentPrice);
+            }
+          } else {
+            $parent.html("<h1>" + data.message + "</h1>");
           }
-          else {
-            $parent.find("#appendedPrependedInput")
-              .attr("value", data.currentPrice);
-          }
+
+          
         }, "json" );
 
       });

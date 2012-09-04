@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./lib/controllers')
   , mongoose = require('mongoose')
   , authentication = require('./lib/authentication')
+  , common = require('./lib/middleware/common')
   , RedisStore = require('connect-redis')(express)
   , conf = require('./config')
   , util = require('./lib/util');
@@ -47,6 +48,7 @@ app.configure(function(){
 
   // facebook authentication
   app.use(authentication.middleware());
+  app.use(common);
   app.use(app.router);
 
 
@@ -76,7 +78,10 @@ authentication.helpExpress(app);
 app.get('/', routes.index);
 app.get('/admin', routes.admin);
 app.get('/products', routes.products);
+app.get('/product/:id/delete', routes.delete);
 app.post('/bid/:id', routes.bid);
+app.post('/product/new', routes.create);
+app.post('/product/:id', routes.update);
 
 
 var port = process.env.PORT || 3000;

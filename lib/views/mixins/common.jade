@@ -7,4 +7,62 @@ mixin authentication()
     -else
       a(class='btn btn-primary btn-auth flexwidth btn-login', autocomplete='off', href='/auth/facebook?redirectPath=/', data-loading-text='Logging in...')
         i.icon-user.icon-white
-        | Login
+        |&nbsp;Login with Facebook
+
+mixin modal(product, options)
+  .modal.hide.fade.in(id='modal-#{options.action}',tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+    form(method='post', action='/product/#{options.action}')
+      .modal-header
+        button(type="button", class="close", data-dismiss="modal", aria-hidden="true") ×
+        h3#myModalLabel Add/Edit product
+      .modal-body
+        mixin form(product)
+      .modal-footer
+        button(class="btn", data-dismiss="modal", aria-hidden="true") Close
+        button.btn.btn-primary.btn-save(type='submit') Save changes
+
+
+mixin form(product)
+  label Image name
+  input(type='text', name="url", value=product.url)
+  span(class='help-block') Input image name
+
+  label Caption
+  input(type='text', name="caption",value=product.caption)
+  span(class='help-block') Input a caption
+
+  label Description
+  textarea(type='text', name="description")=product.description
+  span(class='help-block') Input a description
+
+  label Current Price
+  .input-prepend
+    span.add-on ¥
+    input(type='text', name="currentPrice", value=product.currentPrice)
+  span(class='help-block') Input current price
+
+  label Minimium Price
+  .input-prepend
+    span.add-on ¥
+    input(type='text', name="minPrice", value=product.minPrice)
+  span(class='help-block') Input minimium price
+
+  label Maximum Price
+  .input-prepend
+    span.add-on ¥
+    input(type='text', name="maxPrice", value=product.maxPrice)
+  span(class='help-block') Input maximum price
+
+  label Minimium Bid
+  .input-prepend
+    span.add-on ¥
+    input(type='text', name="minBid", value=product.minBid)
+  span(class='help-block') Input minimium bid
+
+  label Is product sold
+  input(type='checkbox', name="isSold", checked=product.isSold)
+  span(class='help-block') Check if product is sold
+
+  label Last bidder
+  input(type='text', name="lastBidder", value=product.lastBidder)
+  span(class='help-block') Input the last bidder's username

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  table.table.table-striped.table-bordered.table-hover.grid-products
+  table.table-striped.table-bordered.table-hover.grid-products.table
     thead
       tr
         th img
@@ -11,18 +11,27 @@ block content
         th mindBid
         th maxPrice
         th isSold
+        th lastbidder
         th action
-    tbody
-    - each product in products
-      tr(data-id='#{product.id}')
-        td 
-          img(src='/img/bazaar/#{product.url}')
-        td #{product.caption}
-        td #{product.description}
-        td #{product.currentPrice}
-        td #{product.minBid}
-        td #{product.maxPrice}
-        td #{product.isSold}
-        td 
-          button.btn.btn-mini.btn-info(type="button") Change
+          a.btn.btn-mini.btn-info(type="button", data-target="#modal-new", role="button", data-toggle="modal") Add
 
+    tbody
+      - each product in products
+        tr(id=product._id)
+          td 
+            img(src='/img/bazaar/#{product.url}')
+          td #{product.caption}
+          td #{product.description}
+          td #{product.currentPrice}
+          td #{product.minBid}
+          td #{product.maxPrice}
+          td #{product.isSold}
+          td #{product.lastBidder}
+          td 
+            a.btn.btn-mini.btn-info(type="button", data-target="#modal-#{product._id}", role="button", data-toggle="modal") Change
+            a.btn.btn-mini.btn-danger(type="button", href='/product/#{product._id}/delete') Delete
+
+
+  - each product in products
+    mixin modal(product, { action: product._id })
+  mixin modal({}, { action: "new" })

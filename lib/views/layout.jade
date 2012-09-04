@@ -19,15 +19,17 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand(href='#') Project name
+          a.brand(href='#')=page.project
           div.nav-collapse.collapse
             ul.nav
               li.active
                 a(href='/') Home
-              li
-                a(href='/admin') Admin
+              -if(everyauth.loggedIn && (everyauth.facebook.user.username == 'stephan.wallentin' || everyauth.facebook.user.username == 'astrid.blomberg.3')) 
+                li
+                  a(href='/admin') Admin
               li
                 mixin authentication()
+
     .container
       .row
         .span12.content
