@@ -29,29 +29,29 @@ app.configure(function(){
 
   // session store in memory
 
-  app.use(express.session({ secret : 'my happy go lucky2' }));
+  // app.use(express.session({ secret : 'my happy go lucky2' }));
 
   // session store in redis
 
-  // app.use(express.session({ 
-  //   secret: 'my happy go lucky friend', 
-  //   store: new RedisStore({
-  //     host: app.set('redis:hostname'),
-  //     port: app.set('redis:port'),
-  //     db: app.set('redis:user'),
-  //     pass: app.set('redis:pass')
-  //   }) 
-  // }));
+  app.use(express.session({ 
+    secret: 'my happy go lucky friend', 
+    store: new RedisStore({
+      host: app.set('redis:hostname'),
+      port: app.set('redis:port'),
+      db: app.set('redis:user'),
+      pass: app.set('redis:pass')
+    }) 
+  }));
 
   // cross site request forgery prevention
-  app.use(express.csrf());
-    app.use(express.static(__dirname + '/public'));
+  // app.use(express.csrf());
+  app.use(express.static(__dirname + '/public'));
 
 
   // facebook authentication
   app.use(authentication.middleware(app));
   app.use(common);
-  app.use(app.router);
+  // app.use(app.router);
 
 });
 
@@ -64,11 +64,11 @@ app.configure('production', function(){
 });
 
 
-app.dynamicHelpers({
-  token: function(req, res) {
-    return req.session._csrf;
-  }
-});
+// app.dynamicHelpers({
+//   token: function(req, res) {
+//     return req.session._csrf;
+//   }
+// });
 
 
 
@@ -83,7 +83,6 @@ app.post('/product/new', routes.create);
 app.post('/product/:id', routes.update);
 
 authentication.helpExpress(app);
-
 
 var port = process.env.PORT || 3000;
 app.listen(port);

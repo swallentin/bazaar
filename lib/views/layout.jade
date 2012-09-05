@@ -9,7 +9,7 @@ html
     meta(name='description', content='')
     meta(name='author', content='')
     link(href='/css/bootstrap.css', rel='stylesheet')
-    link(href='/css/bootstrap-responsive.css', rel='stylesheet')
+    //- link(href='/css/bootstrap-responsive.css', rel='stylesheet')
     link(href='/css/styles.css', rel='stylesheet')
   body
     .navbar.navbar-inverse.navbar-fixed-top
@@ -45,7 +45,7 @@ html
     //- templates
     script#viewer-template(type='text/x-handlebars-template')
       |  <div class="item">
-      |    <img src="/img/bazaar/{{url}}" class="img">
+      |    <img src="{{url}}" class="img">
       |    <div class='info'>
       |      <h4>{{caption}}</h4>
       |      <p>{{description}}</p>
@@ -63,7 +63,7 @@ html
 
     script#thumbnail-template(type='text/x-handlebars-template')
       | <div class="thumbnail navigate" data-action='to' data-element='#gallery'>
-      |  <img src="/img/bazaar/{{url}}" class='img'>
+      |  <img src="{{url}}" class='img'>
       | </div>
 
     //- livereload

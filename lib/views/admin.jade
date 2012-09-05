@@ -5,6 +5,7 @@ block content
     thead
       tr
         th img
+        th sorting index
         th caption
         th description
         th currentPrice
@@ -19,7 +20,8 @@ block content
       - each product in products
         tr(id=product._id)
           td 
-            img(src='/img/bazaar/#{product.url}')
+            img(src='#{product.url}')
+          td #{product.index}
           td #{product.caption}
           td #{product.description}
           td #{product.currentPrice}
