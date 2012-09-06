@@ -52,9 +52,12 @@ html
       |      {{#if isSold}}
       |       <h1>This product has been sold!</h1>
       |       {{else}}
+      |      <p><span class="input-prepend input-append">
+      |        <span class="add-on">Starting price: ¥</span><input disabled class="span1" id="appendedPrependedInput" size="16" type="text" value="{{minPrice}}">
+      |      </span>
       |      <span class="input-prepend input-append">
       |        <span class="add-on">Current bid: ¥</span><input disabled class="span1" id="appendedPrependedInput" size="16" type="text" value="{{currentPrice}}">
-      |      </span>
+      |      </span></p>
       |      <button class="btn btn-normal btn-primary btn-bid" data-id="{{_id}}" data-action="bid" type="button">Bid ¥{{minBid}}</button>
       |      <button class="btn btn-normal btn-danger btn-bid" data-id="{{_id}}" data-action="maxBid" type="button">Maxbid ¥{{maxPrice}}</button>
       |       {{/if}}
