@@ -57,7 +57,7 @@ $(function() {
 
             if( data.currentPrice >= data.maxPrice ) {
               $parent.fadeTo(500, 0, function() {
-                $parent.html("<h1>You won the auction congrats!</h1>").fadeTo(500, 1);
+                $parent.html("<h3>Yay! Congratulations, you've just purchased something amazing. To claim your purchase, contact us on +86 186 2106 2148 or send a facebook message to me @ <a href='https://www.facebook.com/stephan.wallentin'>https://www.facebook.com/stephan.wallentin</a></h3>").fadeTo(500, 1);
               });
             }
             else {
