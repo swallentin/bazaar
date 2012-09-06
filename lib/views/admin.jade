@@ -30,7 +30,8 @@ block content
           td #{product.maxPrice}
           td #{product.minPrice}
           td #{product.isSold}
-          td #{product.lastBidder}
+          td 
+            a(href=product.lastBidder, target='_blank')=product.lastBidder
           td 
             a.btn.btn-mini.btn-info(type="button", data-target="#modal-#{product._id}", role="button", data-toggle="modal") Change
             a.btn.btn-mini.btn-danger(type="button", href='/product/#{product._id}/delete') Delete

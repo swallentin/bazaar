@@ -1,6 +1,7 @@
 
 $(function() {
 
+
   $('#myModal').on('show', function(e) {
     console.log(e);
   });
@@ -39,6 +40,7 @@ $(function() {
         });
     },
     callback: function() {
+  
       $(".btn-bid[data-action]").click( function() {
         $this = $(this);
         var id = $this.attr("data-id")
